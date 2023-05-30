@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @products = Product.all
   end
@@ -7,10 +9,23 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def new
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new(product_params)
+    @product.user = current_user
+    if @product.save
+      redirect_to products_path
+    else
+      render "new", status: :unprocessable_entity
+    end
+  end
 
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :stock, :category, :user, :price, :product_url)
+    params.require(:product).permit(:name, :description, :stock, :category, :price, :product_url)
   end
 end
