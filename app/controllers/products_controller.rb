@@ -23,6 +23,29 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to product_path, notice: "Product was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    # if @product.user == current_user
+    # @product = Product.find(params[:id])
+    # @product.destroy
+    # redirect_to product_path
+    #else
+     # redirect_to product_path, notice: "You don't autorization for this"
+    #end
+  end
+
   private
 
   def product_params
