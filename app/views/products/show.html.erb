@@ -9,5 +9,9 @@
 
 
 <%= simple_form_for [@product] do |f| %>
- <%= f.button :submit, "finalizar"%>
+ <%= f.button :submit, "finalizar", class: "btn btn-success"%>
+<% end %>
+
+<% if @product.user == current_user%>
+  <%= button_to "delete this product", @product, method: :delete, class: "btn btn-danger" %>
 <% end %>
