@@ -9,9 +9,11 @@
 
 
 <%= simple_form_for [@product] do |f| %>
- <%= f.button :submit, "finalizar", class: "btn btn-success"%>
+ <%= f.button :submit, "Comprar", class: "btn btn-success"%>
 <% end %>
 
-<% if @product.user == current_user%>
+<% if @product.user == current_user && @product.orders.empty? %>
   <%= button_to "delete this product", @product, method: :delete, class: "btn btn-danger" %>
+  <% elsif @product.user == current_user %>
+  <%= link_to "Desativar produto", product_path(@product, product: {active: false}), remote: true, data: {"turbo-method": :patch}, class: "btn btn-danger" %>
 <% end %>
