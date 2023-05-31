@@ -4,7 +4,9 @@
 <%= @product.description %>
 <%= @product.price %>
 <p> quantidade em estoque: <%= @product.stock %></p>
-<%= image_tag @product.product_url, height: "200px" %>
+<% @product.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: "200px" %>
+<% end %>
 <%= link_to 'Back', products_path, class: "btn btn-primary" %>
 
 <% if @product.user != current_user %>
