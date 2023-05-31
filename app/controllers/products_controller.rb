@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
+  def my_products
+    @products = Product.where(user: current_user)
+  end
+
   def index
     @products = Product.where(active: true)
   end
