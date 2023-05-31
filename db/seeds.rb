@@ -25,7 +25,7 @@ product1 = Product.create!(user: user1,
                            category: "Decoração",
                            stock: 25,
                            price: 134.99,
-                           product_url: "https://arteref.com/wp-content/uploads/2023/03/DESTAQUE-17.jpg" )
+                          )
 
 product2 = Product.create!(user: user1,
                            name: "Aplique em MDF Buda",
@@ -33,7 +33,7 @@ product2 = Product.create!(user: user1,
                            category: "Decoração",
                            stock: 100,
                            price: 4.00,
-                           product_url: "https://palaciodaarte.vteximg.com.br/arquivos/ids/221833-1000-1000/Aplique-em-MDF-Buda-15x15cm---Palacio-da-Arte.jpg?v=637109892312300000")
+                          )
 
 product3 = Product.create!(user: user2,
                            name: "Leão deitado de amigurum em crochê",
@@ -41,7 +41,7 @@ product3 = Product.create!(user: user2,
                            category: "Decoração",
                            stock: 10,
                            price: 150.00,
-                           product_url: "https://lojadoamigurumi.com.br/image/cache/catalog/products_2022/20220304_121245_clipped_rev_1-1000x1000.jpg")
+                          )
 
 product4 = Product.create!(user: user3,
                            name: "Quadro Decorativo Com Vidro Gratidão Significado",
@@ -49,7 +49,7 @@ product4 = Product.create!(user: user3,
                            category: "Decoração",
                            stock: 20,
                            price: 89.90,
-                           product_url: "https://img.elo7.com.br/product/zoom/43F068F/quadro-decorativo-com-vidro-gratidao-significado-30x40-vidro.jpg")
+                          )
 
 Order.create!(user: user1, product: product4, quantity: 3)
 Order.create!(user: user2, product: product1, quantity: 5)
