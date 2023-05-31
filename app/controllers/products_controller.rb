@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @products = Product.all
+    @products = Product.where(active: true)
   end
 
   def show
@@ -37,18 +37,18 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    # if @product.user == current_user
-    # @product = Product.find(params[:id])
-    # @product.destroy
-    # redirect_to product_path
-    #else
-     # redirect_to product_path, notice: "You don't autorization for this"
-    #end
+    @product = Product.find(params[:id])
+    if @product.user == current_user
+      @product.destroy
+      redirect_to products_path
+    else
+      redirect_to product_path(@product), notice: "You don't autorization for this"
+    end
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :stock, :category, :price, :product_url)
+    params.require(:product).permit(:active, :name, :description, :stock, :category, :price, :product_url)
   end
 end
