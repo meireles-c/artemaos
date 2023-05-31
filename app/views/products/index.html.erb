@@ -10,7 +10,7 @@
 
     .list-group {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       grid-gap: 10px;
     }
 
@@ -48,7 +48,6 @@
       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
         <h1>Pages#index</h1>
         <ul class="list-group mb-3">
-          <p>Find me in app/views/pages/home.html.erb</p>
               <% @products.each do |product| %>
                 <li class="list-group-item">
                 <div class="card">
