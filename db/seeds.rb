@@ -1,6 +1,6 @@
+Order.destroy_all
 Product.destroy_all
 User.destroy_all
-Order.destroy_all
 
 user1 = User.create!(name: "Ana Silva",
                      profile: "artesão",
@@ -17,7 +17,6 @@ user3 = User.create!(name: "Carlos Oliveira",
                      email: "amanteartesanato3@example.com",
                      password: "senha3",
                      address: "Praça das Artes, 789")
-
 
 
 product1 = Product.create!(user: user1,

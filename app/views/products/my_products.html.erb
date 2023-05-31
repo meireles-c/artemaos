@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Pages#my_products</h1>
+      <ul class="list-group mb-3">
+        <p>Find me in app/views/pages/home.html.erb</p>
+            <% @products.each do |product| %>
+              <li class="list-group-item">
+                <%= link_to product.name, product_path(product) %>
+              </li>
+              <% if product.orders.empty? %>
+                <%= button_to "Delete this product", product, method: :delete, class: "btn btn-danger" %>
+              <% else %>
+                <% if product.active %>
+                  <%= link_to "Desativar produto", product_path(product, product: {active: false}), remote: true, data: {"turbo-method": :patch}, class: "btn btn-danger" %>
+                <% else %>
+                  <%= link_to "Ativar produto", product_path(product, product: {active: true}), remote: true, data: {"turbo-method": :patch}, class: "btn btn-success" %>
+                <% end %>
+              <% end %>
+        <% end  %>
+      </ul>
+    </div>
+  </div>
+</div>
