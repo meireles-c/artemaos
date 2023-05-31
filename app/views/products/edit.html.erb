@@ -1,0 +1,13 @@
+<h1>Edit your product:</h1>
+
+<%= simple_form_for @product do |f| %>
+        <%= f.input :name %>
+        <%= f.input :category %>
+        <%= f.input :description %>
+        <%= f.input :stock %>
+        <%= f.input :price %>
+        <%= f.input :product_url %>
+        <%= f.submit class: 'btn btn-warning' %>
+<% end %>
+
+<%= link_to 'Back', products_path, class: "btn btn-primary" %>
