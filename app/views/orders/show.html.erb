@@ -1,0 +1,6 @@
+<h1><%= @order.product.name%></h1>
+<p>Buyer:<%= @order.user.name %></p>
+<p>Seller:<%= @order.product.user.name %></p>
+<p>Quantity:<%= @order.quantity %></p>
+
+<%= link_to 'Back', products_path, class: "btn btn-primary" %>

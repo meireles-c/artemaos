@@ -10,7 +10,8 @@
 <%= link_to 'Back', products_path, class: "btn btn-primary" %>
 
 <% if @product.user != current_user %>
-  <%= simple_form_for [@product] do |f| %>
+  <%= simple_form_for [@product, @order] do |f| %>
+    <%= f.input :quantity %>
     <%= f.button :submit, "Comprar", class: "btn btn-success"%>
   <% end %>
 <% end %>
