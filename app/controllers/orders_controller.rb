@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
   end
 
   def my_orders
-    
+    @orders = Order.where(user: current_user)
   end
 
   private

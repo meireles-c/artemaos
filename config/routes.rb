@@ -11,12 +11,12 @@ Rails.application.routes.draw do
       get "my_products"
     end
   end
-<<<<<<< HEAD
+
   resources :orders, only: [:show] do
     collection do
       get "my_orders"
     end
   end
   resources :profiles, only: :show
->>>>>>> master
+
 end
