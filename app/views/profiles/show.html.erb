@@ -1,0 +1,10 @@
+<%= @user.name %>
+<%= link_to "Editar", edit_user_registration_path %>
+<%= @user.profile %>
+ <ul class="list-group mb-3">
+      <% @user.products.each do |product| %>
+              <li class="list-group-item">
+                <%= link_to product.name, product_path(product) %>
+              </li>
+        <% end  %>
+      </ul>
