@@ -7,6 +7,9 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.where(active: true)
+    if params[:category].present?
+      @products = @products.where(category: params[:category])
+    end
   end
 
   def show
