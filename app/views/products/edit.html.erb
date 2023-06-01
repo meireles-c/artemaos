@@ -1,4 +1,4 @@
-<h1>Add new product</h1>
+<h1>Edit your product:</h1>
 
 <%= simple_form_for @product do |f| %>
         <%= f.input :name %>
@@ -6,9 +6,8 @@
         <%= f.input :description %>
         <%= f.input :stock %>
         <%= f.input :price %>
+        <%= f.submit class: 'btn btn-warning' %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<% end %>
+
+<%= link_to 'Back', products_path, class: "btn btn-primary" %>
