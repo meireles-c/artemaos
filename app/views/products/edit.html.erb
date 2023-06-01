@@ -2,7 +2,7 @@
 
 <%= simple_form_for @product do |f| %>
         <%= f.input :name %>
-        <%= f.input :category %>
+        <%= f.input :category, collection: Product::CATEGORY %>
         <%= f.input :description %>
         <%= f.input :stock %>
         <%= f.input :price %>
