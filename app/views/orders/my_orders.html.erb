@@ -1,31 +1,31 @@
 <div class="container py-3">
   <div class="row">
-      <div class="col border border-dark text-center rounded m-1">
+      <div class="col bg-white border border-light text-center rounded m-1">
         <h4>Número do pedido</h4>
       </div>
-      <div class="col border border-dark text-center rounded m-1">
+      <div class="col bg-white border border-light text-center rounded m-1">
         <h4>Produto</h4>
       </div>
-      <div class="col border border-dark text-center rounded m-1">
+      <div class="col bg-white border border-light text-center rounded m-1">
         <h4>Quantidade</h4>
       </div>
-      <div class="col border border-dark text-center rounded m-1">
+      <div class="col bg-white border border-light text-center rounded m-1">
         <h4>Preço</h4>
       </div>
   </div>
 
     <% @orders.each do |order| %>
-      <div class="row ">
-        <div class="col text-center border border-dark rounded m-1">
-          <p><%= order.id %></p>
+      <div class="row">
+        <div class="col  bg-white text-center border border-light rounded m-1">
+          <p class=""><%= order.id %></p>
         </div>
-        <div class="col text-center border border-dark rounded m-1">
+        <div class="col bg-white text-center border border-light rounded m-1">
           <p><%= order.product.name %></p>
         </div>
-        <div class="col text-center border border-dark rounded m-1">
+        <div class="col bg-white text-center border border-light rounded m-1">
           <p><%= order.quantity %></p>
         </div>
-        <div class="col text-center border border-dark rounded m-1">
+        <div class="col bg-white text-center border border-light rounded m-1">
           <p>R$<%= number_with_precision(order.product.price, precision: 2) %></p>
         </div>
       </div>
