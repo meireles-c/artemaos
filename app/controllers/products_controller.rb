@@ -7,6 +7,11 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.where(active: true)
+    @products = Product.all
+      if params[:query].present?
+        sql_subquery = "name ILIKE :query OR description ILIKE :query"
+        @products = @products.where(sql_subquery, query: "%#{params[:query]}%")
+      end
   end
 
   def show
