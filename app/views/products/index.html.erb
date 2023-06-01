@@ -1,15 +1,23 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Pages#index</h1>
-      <ul class="list-group mb-3">
-        <p>Find me in app/views/pages/home.html.erb</p>
-            <% @products.each do |product| %>
-              <li class="list-group-item">
-                <%= link_to product.name, product_path(product) %>
-              </li>
-        <% end  %>
-      </ul>
+<head>
+
+
+ </head>
+<body>
+  <div class="container" style="background-color: #DAD7CD">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h1>Pages#index</h1>
+        <ul class="list-group mb-3">
+              <% @products.each do |product| %>
+                <li class="list-group-item">
+                <div class="card">
+                  <%= link_to product.name, product_path(product) %>
+                  <%= cl_image_tag product.photos.first.key, alt: product.name %>
+                </div>
+                </li>
+          <% end  %>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+</body>
