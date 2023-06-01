@@ -1,7 +1,7 @@
 <head>
 
 
- </head>
+</head>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
@@ -12,15 +12,6 @@
             <%= link_to category, products_path(category: category) %>
           </li>
         <% end %>
-      </ul>
-      <ul class="list-group mb-3">
-        <p>Find me in app/views/pages/home.html.erb</p>
-            <% @products.each do |product| %>
-              <li class="list-group-item">
-                <%= link_to product.name, product_path(product) %>
-              </li>
-        <% end  %>
-      </ul>
 <body>
   <div class="container" style="background-color: #DAD7CD">
     <div class="row">
