@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       get "my_products"
     end
   end
+  resources :profiles, only: :show
 end
