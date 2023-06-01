@@ -6,9 +6,17 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "products#index"
   resources :products do
+    resources :orders, only: [:create]
     collection do
       get "my_products"
     end
   end
+
+  resources :orders, only: [:show] do
+    collection do
+      get "my_orders"
+    end
+  end
   resources :profiles, only: :show
+
 end
