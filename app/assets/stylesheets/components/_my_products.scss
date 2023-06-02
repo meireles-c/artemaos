@@ -1,27 +1,4 @@
-// Import your components CSS files here.
-@import "alert";
-@import "avatar";
-@import "form_legend_clear";
-@import "navbar";
-
-body {
-  background-color: #344E41;
-}
-
-.container.first-container {
-  background-color: #A3B18A;
-  margin-top: 20px;
-  max-width: 1500px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  text-align: center;
-  border-radius: 5px;
-}
-
-.container.second-container {
+.container.third-container {
   background-color: #DAD7CD;
   margin-top: 30px;
   max-width: 1500px;
@@ -31,26 +8,12 @@ body {
   align-items: center;
   border-radius: 5px;
 }
-
-.container .row .col-xs-12 {
-  padding-top: 10px;
-}
-
-.container.first-container a {
-  font-size: 17px;
-}
-
 .list-group {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
 }
 
-.category-group {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-gap: 80px;
-}
 
 .list-group-item {
   position: relative;
@@ -91,19 +54,4 @@ body {
   width: 65%;
   height: auto;
   margin-bottom: 5px;
-}
-
-.price {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #588157;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
 }

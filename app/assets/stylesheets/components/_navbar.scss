@@ -8,5 +8,19 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 60px;
+  width: 200px;
+  position: relative;
+  float: left;
+  line-height: 0;
+  height: 100%;
+}
+
+.navbar-logo {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.navbar-nav.me-auto {
+  font-size: 18px;
 }
