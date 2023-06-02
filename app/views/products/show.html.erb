@@ -12,7 +12,7 @@
 
 <% if @product.user != current_user %>
   <%= simple_form_for [@product, @order] do |f| %>
-    <%= f.input :quantity %>
+    <%= f.input :quantity, input_html: { min: 1 }, label: "Quantity", required: true, placeholder: "Enter a quantity" %>
     <%= f.button :submit, "Comprar", class: "btn btn-success"%>
   <% end %>
 <% end %>

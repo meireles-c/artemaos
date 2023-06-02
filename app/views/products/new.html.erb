@@ -4,8 +4,8 @@
         <%= f.input :name %>
         <%= f.input :category, collection: Product::CATEGORY %>
         <%= f.input :description %>
-        <%= f.input :stock %>
-        <%= f.input :price %>
+        <%= f.input :stock, input_html: { min: 0 }, placeholder: "Enter the stock" %>
+        <%= f.input :price, input_html: { min: 0 }, placeholder: "Enter the price" %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>

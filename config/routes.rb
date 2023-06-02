@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:show] do
     collection do
       get "my_orders"
+      get "my_sales"
     end
   end
   resources :profiles, only: :show

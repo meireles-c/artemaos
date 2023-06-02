@@ -1,6 +1,16 @@
-<h1><%= @order.product.name%></h1>
-<p>Buyer:<%= @order.user.name %></p>
-<p>Seller:<%= @order.product.user.name %></p>
-<p>Quantity:<%= @order.quantity %></p>
-
-<%= link_to 'Back', products_path, class: "btn btn-primary" %>
+<div class="container d-flex justify-content-center align-items-center my-3">
+  <div class="card" style="width: 18rem; height: auto">
+    <h3 class="card-title">Compra efetuada com sucesso!🥳 </h3>
+    <% @order.product.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, class:"card-img-top" %>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @order.product.name%></h5>
+      <p class="card-text"><p>Buyer:<%= @order.user.name %></p>
+      <p>Seller:<%= @order.product.user.name %></p>
+      <p>Quantity:<%= @order.quantity %></p></p>
+      <%= link_to 'Back', products_path, class: "btn btn-primary" %>
+      <%= link_to 'My Orders', my_orders_orders_path, class: "btn btn-warning", style: "background-color: #ffc65a" %>
+    </div>
+  </div>
+</div>
