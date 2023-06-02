@@ -8,14 +8,15 @@
   align-items: center;
   border-radius: 5px;
 }
-.list-group {
+
+.list-group-my-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
 }
 
 
-.list-group-item {
+.list-group-item-my-products {
   position: relative;
   display: flex;
   flex-direction: column;

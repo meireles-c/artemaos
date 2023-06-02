@@ -1,20 +1,16 @@
-<head>
-</head>
-
-<body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <div class="container second-container">
+  <div class="container display-container">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-sm-offset-1">
-        <ul class="list-group mb-3">
+        <ul class="list-group mb-3" data-controller="price">
           <% @products.each do |product| %>
             <li class="list-group-item">
-              <div class="card">
+              <div class="card-product">
                <%= link_to product.name, product_path(product) %>
                <%= cl_image_tag product.photos.first.key, alt: product.name %>
                 <div class="price">
-                  <span class="original-price" data-link="<%= product_path(product) %>"><%= number_with_precision(product.price, precision: 2) %></span>
+                  <div><span class="original-price" data-price-target="original-price">R$ <%= number_with_precision(product.price, precision: 2) %></span></div>
+
+                  <div><a class="button-price" data-action="click->price#redirect_to" data-price-link-value=<%= product_path(product) %>><i class="fa-solid fa-cart-shopping"></i></a></div>
                 </div>
               </div>
             </li>
@@ -25,25 +21,15 @@
   </div>
 </div>
 
-
-
-
 <script>
   $(document).ready(function() {
     $('.original-price').hover(function() {
       // Store the original price
       $(this).data('original-price', $(this).text());
-      $(this).text('Click e compre agora');
+      $(this).text('Click e compre →');
     }, function() {
       // Restore the original price
       $(this).text($(this).data('original-price'));
     });
-
-    $('.original-price').click(function() {
-      var productPath = $(this).data('link');
-      window.location.href = productPath;
-    });
   });
 </script>
-
-</body>
