@@ -7,7 +7,8 @@
         <%= f.input :stock %>
         <%= f.input :price %>
         <%= f.submit class: 'btn btn-warning' %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.hidden_field :updated_at, value: DateTime.current %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true, required: false } %>
 <% end %>
 
 <%= link_to 'Back', products_path, class: "btn btn-primary" %>
