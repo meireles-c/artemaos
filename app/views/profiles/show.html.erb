@@ -1,10 +1,31 @@
-<%= @user.name %>
-<%= link_to "Editar", edit_user_registration_path %>
-<%= @user.profile %>
- <ul class="list-group mb-3">
-      <% @user.products.each do |product| %>
-          <li class="list-group-item">
-            <%= link_to product.name, root_path %>
-          </li>
-      <% end  %>
-  </ul>
+<div class="container">
+  <div class="row justify-content-between align-items-center my-1">
+    <div class="col">
+      <h1 class="text-white"><%= @user.name %></h1>
+    </div>
+    <div class="col-auto">
+      <%= link_to "Edite seu perfil", edit_user_registration_path, class: "btn btn-light" %>
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <div class="col">
+      <p class="text-white"><%= @user.profile %> </p>
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <% @user.products.each do |product| %>
+      <div class="col-4 my-3">
+        <div class="card" style="width: auto; height: auto">
+          <% product.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, class: "card-img-top" %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text">Seller: <%= product.user.name %></p>
+            <%= link_to "View Product", root_path, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
