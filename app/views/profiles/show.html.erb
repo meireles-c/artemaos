@@ -3,8 +3,8 @@
 <%= @user.profile %>
  <ul class="list-group mb-3">
       <% @user.products.each do |product| %>
-              <li class="list-group-item">
-                <%= link_to product.name, product_path(product) %>
-              </li>
-        <% end  %>
-      </ul>
+          <li class="list-group-item">
+            <%= link_to product.name, root_path %>
+          </li>
+      <% end  %>
+  </ul>

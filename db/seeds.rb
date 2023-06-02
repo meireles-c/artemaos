@@ -26,7 +26,6 @@ product1 = Product.new(user: user1,
                            category: "Decoração",
                            stock: 25,
                            price: 177.99,)
-                          #  product_url: "https://cdn.leroymerlin.com.br/products/panela_ceramica_branca_vale_do_jequitinhonha__conceicao__1570049550_9d76_600x600.png" )
 file1 = URI.open("https://cdn.leroymerlin.com.br/products/panela_ceramica_branca_vale_do_jequitinhonha__conceicao__1570049550_9d76_600x600.png")
 product1.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 product1.save!
@@ -37,7 +36,6 @@ product2 = Product.new(user: user1,
                            category: "Decoração",
                            stock: 100,
                            price: 150.00,)
-                          #  product_url: "https://cdn.leroymerlin.com.br/products/manta_de_algodao_vinho_1_80_x_1_50_1567862764_8188_600x600.jpg")
 
 file2 = URI.open("https://cdn.leroymerlin.com.br/products/manta_de_algodao_vinho_1_80_x_1_50_1567862764_8188_600x600.jpg")
 product2.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -49,18 +47,16 @@ product3 = Product.new(user: user2,
                            category: "Decoração",
                            stock: 10,
                            price: 410.00,)
-                          #  product_url: "https://cdn.leroymerlin.com.br/products/vaso_com_flores_em_ceramica_tita_de_capela_1568156101_1604_600x600.png")
 file3 = URI.open("https://cdn.leroymerlin.com.br/products/vaso_com_flores_em_ceramica_tita_de_capela_1568156101_1604_600x600.png")
 product3.photos.attach(io: file3, filename: "nes.png", content_type: "image/png")
 product3.save!
 
 product4 = Product.new(user: user3,
-                           name: "Baianas Cerâmica Alto do Moura Nicinha Otília Amarelo e Verde",
+                           name: "Baianas Cerâmica Alto do Moura Nicinha Otília",
                            description: "Nicinha Otília é artesã e poeta de Caruarú/PE, e se refere ao barro como “ouro negro, minha caneta sem bico, porque com ele eu escrevo o que eu quiser, a poesia que eu quiser”.",
                            category: "Decoração",
                            stock: 20,
                            price: 20.50,)
-                          #  product_url: "https://cdn.leroymerlin.com.br/products/baianas_ceramica_alto_do_moura_nicinha_otilia_amarelo_e_verde_1568156162_8ffb_600x600.png")
 file4 = URI.open("https://cdn.leroymerlin.com.br/products/baianas_ceramica_alto_do_moura_nicinha_otilia_amarelo_e_verde_1568156162_8ffb_600x600.png")
 product4.photos.attach(io: file4, filename: "nes.png", content_type: "image/png")
 product4.save!
@@ -72,7 +68,6 @@ product5 = Product.new(user: user3,
                            category: "Decoração",
                            stock: 20,
                            price: 89.90,)
-                          #  product_url: "https://cdn.leroymerlin.com.br/products/composicao_de_parede_caratinga_1567739152_dd1d_600x600.jpg")
 file5 = URI.open("https://cdn.leroymerlin.com.br/products/composicao_de_parede_caratinga_1567739152_dd1d_600x600.jpg")
 product5.photos.attach(io: file5, filename: "nes.png", content_type: "image/png")
 product5.save!
@@ -83,7 +78,6 @@ product6 = Product.new(user: user3,
                            category: "Decoração",
                            stock: 20,
                            price: 89.90,)
-                          #  product_url: "https://cdn.leroymerlin.com.br/products/luminaria_de_palha_aramada_piramide_g_40cm_1567671377_211e_600x600.jpg")
 file6 = URI.open("https://cdn.leroymerlin.com.br/products/luminaria_de_palha_aramada_piramide_g_40cm_1567671377_211e_600x600.jpg")
 product6.photos.attach(io: file6, filename: "nes.png", content_type: "image/png")
 product6.save!
@@ -94,7 +88,6 @@ product7 = Product.new(user: user2,
                            category: "Decoração",
                            stock: 20,
                            price: 89.90,)
-                          #  product_url: "https://cdn.leroymerlin.com.br/products/conjunto_itapuama_3_pecas_1567612176_4786_600x600.jpg")
 file7 = URI.open("https://cdn.leroymerlin.com.br/products/conjunto_itapuama_3_pecas_1567612176_4786_600x600.jpg")
 product7.photos.attach(io: file7, filename: "nes.png", content_type: "image/png")
 product7.save!
@@ -105,7 +98,6 @@ product8 = Product.new(user: user3,
                            category: "Decoração",
                            stock: 20,
                            price: 89.90,)
-                          #  product_url: "https://cdn.leroymerlin.com.br/products/bule_de_cafe_amarelo_com_6_canecas_coloridas_1567739530_33cb_600x600.jpg")
 file8 = URI.open("https://cdn.leroymerlin.com.br/products/bule_de_cafe_amarelo_com_6_canecas_coloridas_1567739530_33cb_600x600.jpg")
 product8.photos.attach(io: file8, filename: "nes.png", content_type: "image/png")
 product8.save!
@@ -116,7 +108,6 @@ product9 = Product.new(user: user1,
                            category: "Decoração",
                            stock: 20,
                            price: 289.90,)
-                          #  product_url: "https://cdn.leroymerlin.com.br/products/item_decorativo_1570679654_a9bb_600x600.jpg")
 file9 = URI.open("https://cdn.leroymerlin.com.br/products/item_decorativo_1570679654_a9bb_600x600.jpg")
 product9.photos.attach(io: file9, filename: "nes.png", content_type: "image/png")
 product9.save!
@@ -127,7 +118,6 @@ product10 = Product.new(user: user3,
                             category: "Decoração",
                             stock: 20,
                             price: 89.90,)
-                            # product_url: "https://cdn.leroymerlin.com.br/products/cesto_cunho_45_cm_etnia_mehinako_xingu___mod__13_1570896599_b81d_600x600.png")
 file10 = URI.open("https://cdn.leroymerlin.com.br/products/cesto_cunho_45_cm_etnia_mehinako_xingu___mod__13_1570896599_b81d_600x600.png")
 product10.photos.attach(io: file10, filename: "nes.png", content_type: "image/png")
 product10.save!
@@ -138,7 +128,6 @@ product11 = Product.new(user: user2,
                             category: "Decoração",
                             stock: 20,
                             price: 99.90,)
-                            # product_url: "https://cdn.leroymerlin.com.br/products/sousplat_palha_de_tucuma_colorida_30cm_mod_9_1570820413_0cec_600x600.png")
 file11 = URI.open("https://cdn.leroymerlin.com.br/products/sousplat_palha_de_tucuma_colorida_30cm_mod_9_1570820413_0cec_600x600.png")
 product11.photos.attach(io: file11, filename: "nes.png", content_type: "image/png")
 product11.save!
@@ -149,7 +138,6 @@ product12 = Product.new(user: user1,
                             category: "Decoração",
                             stock: 20,
                             price: 263.00,)
-                            # product_url: "https://cdn.leroymerlin.com.br/products/cesto_cunho_45_cm_etnia_mehinako_xingu___mod__17_1570896587_c049_600x600.png")
 file12 = URI.open("https://cdn.leroymerlin.com.br/products/cesto_cunho_45_cm_etnia_mehinako_xingu___mod__17_1570896587_c049_600x600.png")
 product12.photos.attach(io: file12, filename: "nes.png", content_type: "image/png")
 product12.save!
@@ -160,7 +148,6 @@ product13 = Product.new(user: user3,
                             category: "Decoração",
                             stock: 20,
                             price: 1589.90,)
-                            # product_url: "https://cdn.leroymerlin.com.br/products/colar_verde_croche_casca_de_jacaranda_e_acai_sanclau_ac_1570997756_4f5c_600x600.jpg")
 file13 = URI.open("https://cdn.leroymerlin.com.br/products/colar_verde_croche_casca_de_jacaranda_e_acai_sanclau_ac_1570997756_4f5c_600x600.jpg")
 product13.photos.attach(io: file13, filename: "nes.png", content_type: "image/png")
 product13.save!
@@ -171,7 +158,6 @@ product14 = Product.new(user: user2,
                             category: "Decoração",
                             stock: 20,
                             price: 229.90,)
-                            # product_url: "https://cdn.leroymerlin.com.br/products/moringa_1_l_serra_da_capivara_com_tampa_e_copo_cor_linha_a_1571125663_e303_600x600.jpg")
 file14 = URI.open("https://cdn.leroymerlin.com.br/products/moringa_1_l_serra_da_capivara_com_tampa_e_copo_cor_linha_a_1571125663_e303_600x600.jpg")
 product14.photos.attach(io: file14, filename: "nes.png", content_type: "image/png")
 product14.save!
@@ -182,7 +168,6 @@ product15 = Product.new(user: user1,
                             category: "Decoração",
                             stock: 20,
                             price: 89.90,)
-                            # product_url: "https://cdn.leroymerlin.com.br/products/cumbuca_petisqueira_de_coco_pintada_mod__4_1570820407_9a10_600x600.png")
 file15 = URI.open("https://cdn.leroymerlin.com.br/products/cumbuca_petisqueira_de_coco_pintada_mod__4_1570820407_9a10_600x600.png")
 product15.photos.attach(io: file15, filename: "nes.png", content_type: "image/png")
 product15.save!

@@ -1,25 +1,25 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon flex-column">
   <div class="container-fluid">
-    <%= link_to products_path, class: "navbar-brand" do %>
-    <%= image_tag("logo.png") %>
+    <%= link_to products_path, class: "navbar-logo" do %>
+      <%= image_tag("logo.png") %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-<div class="row justify-content-center">
-  <div class="col-sm-14 my-3">
-    <%= form_with url: products_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a product"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+    <div class="row justify-content-center">
+      <div class="col-sm-14 my-3">
+        <%= form_with url: products_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Find a product"
+            %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
@@ -31,7 +31,7 @@
             <p class="nav-link"> <%= current_user.name %> </p>
           </li>
           <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -48,6 +48,19 @@
           </li>
         <% end %>
       </ul>
+    </div>
+  </div>
+  <div>
+    <div class="container first-container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-sm-offset-1">
+          <ul class="category-group mb-3">
+            <% Product::CATEGORY.each do |category| %>
+              <%= link_to category, products_path(category: category) %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
