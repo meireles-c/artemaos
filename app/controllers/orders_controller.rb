@@ -12,6 +12,11 @@ class OrdersController < ApplicationController
     end
   end
 
+  def my_sales
+    products = Product.where(user: current_user)
+    @orders = Order.where(product: products)
+  end
+
   def show
     @order = Order.find(params[:id])
   end

@@ -1,18 +1,23 @@
-<h1><%= @product.name %></h1>
+<div class="container d-flex justify-content-center align-items-center my-3">
+  <div class="card" style="width: 36rem; height: auto">
+    <h3 class="card-title"><%= @product.name %> </h3>
+    <% @product.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, class:"card-img-top" %>
+    <% end %>
+    <div class="card-body">
+      <p class="card-text"><p>Descrição: <%= @product.description %></p>
+      <p>Categoria: <%= @product.category %></p>
+      <p>Preço: R$<%= number_with_precision(@product.price, precision: 2) %></p></p>
+      <p>Quantidade em estoque: <%= @product.stock %></p></p>
+      <p>Veja outros produtos do vendedor <%= link_to @product.user.name, profile_path(@product.user) %></p>
 
-<%= @product.category %>
-<%= @product.description %>
-<%= @product.price %>
-<p> quantidade em estoque: <%= @product.stock %></p>
-<p> <%= link_to @product.user.name, profile_path(@product.user) %> </p>
-<% @product.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: "200px" %>
-<% end %>
-<%= link_to 'Back', products_path, class: "btn btn-primary" %>
-
-<% if @product.user != current_user %>
-  <%= simple_form_for [@product, @order] do |f| %>
-    <%= f.input :quantity %>
-    <%= f.button :submit, "Comprar", class: "btn btn-success"%>
-  <% end %>
-<% end %>
+      <% if @product.user != current_user %>
+        <%= simple_form_for [@product, @order] do |f| %>
+          <%= f.input :quantity, input_html: { min: 1 }, label: "Quantidade", required: true, placeholder: "Quantidade a ser comprada" %>
+          <%= f.button :submit, "Comprar", class: "btn btn-success"%>
+        <% end %>
+      <% end %>
+      <%= link_to 'Back', products_path, class: "btn btn-primary my-3" %>
+    </div>
+  </div>
+</div>

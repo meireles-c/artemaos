@@ -6,9 +6,9 @@
   <div class="container third-container">
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-        <ul class="list-group mb-3">
+        <ul class="list-group-my-products mb-3">
           <% @products.each do |product| %>
-            <li class="list-group-item">
+            <li class="list-group-item-my-products">
               <div class="card second-card">
                 <%= link_to product.name, product_path(product) %>
                 <%= cl_image_tag product.photos.first.key, alt: product.name %>

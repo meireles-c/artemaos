@@ -1,11 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  padding:0%;
+  height:150px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  padding:0%
 }
+
 
 .navbar-lewagon .navbar-brand img {
   width: 200px;
@@ -13,14 +17,43 @@
   float: left;
   line-height: 0;
   height: 100%;
+  padding:0%
 }
 
 .navbar-logo {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  position: absolute;
+  top: 15px;
 }
 
 .navbar-nav.me-auto {
   font-size: 18px;
+}
+
+.container.first-container {
+  margin-top: 0px;
+  max-width: 2000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.container .row .col-xs-12 {
+  padding-top: 0px;
+}
+
+.search-nav{
+position: absolute;
+left: 500px;
+margin-top:60px;
+align-items: center;
+}
+
+.block-avatar{
+  position: absolute;
+  right: 0px;
 }
