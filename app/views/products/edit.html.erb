@@ -1,13 +1,20 @@
-<h1>Edit your product:</h1>
+<div class="container">
+  <div class="row justify-content-center align-items-center my-3">
+    <div class="col col-md-8">
+      <h1 class="text-white text-center">Edit your product</h1>
 
-<%= simple_form_for @product do |f| %>
-        <%= f.input :name %>
-        <%= f.input :category, collection: Product::CATEGORY %>
-        <%= f.input :description %>
-        <%= f.input :stock %>
-        <%= f.input :price %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.submit class: 'btn btn-warning' %>
-<% end %>
-
-<%= link_to 'Back', products_path, class: "btn btn-primary" %>
+      <%= simple_form_for @product do |f| %>
+        <%= f.input :name , label_html: { class: 'text-white' }%>
+        <%= f.input :category, collection: Product::CATEGORY, label_html: { class: 'text-white' } %>
+        <%= f.input :description, label_html: { class: 'text-white' } %>
+        <%= f.input :stock, input_html: { min: 0 }, label_html: { class: 'text-white' }%>
+        <%= f.input :price, input_html: { min: 0 }, label_html: { class: 'text-white' }%>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label_html: { class: 'text-white' } %>
+        <div class="d-flex align-items-center justify-content-center">
+          <%= f.submit class: 'btn btn-warning me-3' %>
+          <%= link_to 'Back', products_path, class: "btn btn-primary my-3" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
