@@ -1,4 +1,14 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(assets/banner.png);">
+</div>
+
+
+
+
+
+
   <div class="container display-container">
+
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-sm-offset-1">
         <ul class="list-group mb-3" data-controller="price">
@@ -8,7 +18,7 @@
                <%= link_to product.name, product_path(product) %>
                <%= cl_image_tag product.photos.first.key, alt: product.name %>
                 <div class="price">
-                  <div><span class="original-price" data-price-target="original-price">R$ <%= number_with_precision(product.price, precision: 2) %></span></div>
+                  <div><span class="original-price" data-price-target="originalprice" data-action="mouseover->price#change_price mouseleave->price#back_price" data-valor=<%= number_with_precision(product.price, precision: 2) %>>R$ <%= number_with_precision(product.price, precision: 2) %></span></div>
 
                   <div><a class="button-price" data-action="click->price#redirect_to" data-price-link-value=<%= product_path(product) %>><i class="fa-solid fa-cart-shopping"></i></a></div>
                 </div>
@@ -20,16 +30,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  $(document).ready(function() {
-    $('.original-price').hover(function() {
-      // Store the original price
-      $(this).data('original-price', $(this).text());
-      $(this).text('Click e compre →');
-    }, function() {
-      // Restore the original price
-      $(this).text($(this).data('original-price'));
-    });
-  });
-</script>
