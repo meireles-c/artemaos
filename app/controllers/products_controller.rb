@@ -42,11 +42,22 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
+    # @product_attachments = @product.photos
+
+    # if product_params[:photos].present?
     if @product.update(product_params)
       redirect_to product_path, notice: "Product was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
+    # else
+    #   # @product_attachments.each do |attachment|
+    #   #   @product.photos.attach(attachment)
+    #   # end
+    #   if @product.update(product_params.reject { |k| k["photos"] })
+    #     redirect_to product_path, notice: "Product was successfully updated."
+    #   end
+    # end
   end
 
   def destroy
@@ -62,6 +73,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:active, :name, :description, :stock, :category, :price, :product_url, photos: [])
+    params.require(:product).permit(:active, :name, :description, :stock, :category, :price, :product_url).merge(photos: [])
   end
 end
